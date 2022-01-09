@@ -1,7 +1,6 @@
 import pandas as pd
 import utils
 from knn import x_NN
-import time
 
 NUMBER_NEIGHBORS = [1,2,3,5,7,9,13]
 FILES = ['banana', 'coil2000', 'haberman', 'magic', 'phoneme', 'pima' ,'ring', 'spambase', 'titanic', 'twonorm']
@@ -30,7 +29,6 @@ def main():
         results = []
         
         for k in NUMBER_NEIGHBORS:
-            print(file_name, k)
 
             D_train, y_train, D_test, y_test = dataProcessing(file_name)
             # Criar modelo knn

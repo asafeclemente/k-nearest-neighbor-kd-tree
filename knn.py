@@ -77,8 +77,6 @@ class x_NN:
         self.y_test = y_test
         self.predict = classify(self)
         self.cm = confusion_matrix(y_test, self.predict)
-
-        print(self.cm)
     
     def getAccuracy(self):
         d = self.cm[0][0] + self.cm[1][1]

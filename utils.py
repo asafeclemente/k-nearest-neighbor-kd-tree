@@ -19,7 +19,6 @@ def trainTestSplit(X, y, test_size=0.3):
 
     n_train = int((1 - test_size) * X.shape[0]) 
     random_order = np.random.permutation(X.shape[0])
-    # print(random_order)
 
     X_train, X_test = np.split(np.take(X,random_order,axis=0), [n_train])
     y_train, y_test = np.split(np.take(y,random_order), [n_train])
@@ -67,10 +66,8 @@ def confusion_matrix(real, predict):
                     tn += 1
             else:
                 if predicted_value in ['positive', 1, 1.0, 'tested_positive', 'h']:
-                    # print('errou')
                     fp += 1
                 else:
-                    print('errou')
                     fn += 1
                     
         return [[tp, fn],
